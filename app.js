@@ -5,13 +5,13 @@ function toggleSidebar() {
     sidebar.classList.toggle('close')
     toggleButton.classList.toggle('rotate')
 
-    closeALLSubMenus()
+    closeAllSubMenus()
 }
 
 function toggleSubMenu(button) {
 
     if(!button.nextElementSibling.classList.contains('show')) {
-        closeALLSubMenus()
+        closeAllSubMenus()
     }
 
     button.nextElementSibling.classList.toggle('show')
@@ -23,7 +23,7 @@ function toggleSubMenu(button) {
     }
 }
 
-function closeALLSubMenus() {
+function closeAllSubMenus() {
     Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
         ul.classList.remove('show')
         ul.previousElementSibling.classList.remove('rotate')

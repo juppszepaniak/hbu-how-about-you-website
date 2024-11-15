@@ -168,6 +168,57 @@ main p {
     }
 }
 
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+    margin-bottom: 50px;
+}
+
+.btn {
+    font-size:medium;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: auto;
+    border-radius: 2rem;
+}
+
+.btn-color-1, 
+.btn-color-2 {
+    border: 0.1rem solid var(--line-clr);
+}
+
+.btn-color-1:hover, 
+.btn-color-2:hover {
+    cursor: pointer;
+}
+
+.btn-color-1 {
+    background: var(--accent-clr);
+    color: var(--text-clr);
+}
+
+.btn-color-1:hover {
+    background: var(--hover-clr);
+    border: 0.1rem solid var(--accent-clr);
+}
+
+.btn-color-2 {
+    background: none;
+    color: var(--secondary-text-clr);
+}
+
+.btn-color-2:hover {
+    background: var(--hover-clr);
+    border: 0.1rem solid var(--accent-clr);
+    color: var(--text-clr);
+}
+
+.btn-container {
+   gap: 1rem;
+}
+
 .content-container {
     border: 1px solid var(--line-clr);
     border-radius: 1rem;
@@ -175,6 +226,35 @@ main p {
     padding: min(3em, 15%);
 
     h2, p { margin-top: 1em }
+}
+
+.notes-container {
+    border: 1px solid var(--line-clr);
+    border-radius: 1rem;
+    margin-bottom: 20px;
+    padding: min(3em, 15%);
+}
+
+.notes-container:hover {
+    background: var(--hover-clr);
+    border: 0.1rem solid var(--accent-clr);
+}
+
+.notes-container input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    color: var(--text-clr);
+}
+
+.input-box-text {
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    color: var(--text-clr);
+    outline: none;
+    padding-top: 1.5rem;
 }
 
 @media(max-width: 800px) {

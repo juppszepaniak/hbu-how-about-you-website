@@ -157,7 +157,7 @@ main p {
 
 .description-container {
     background-color: var(--accent-clr);
-    border: 1px solid var(--line-clr);
+    border: 1px solid var(--accent-clr);
     border-radius: 1rem;
     margin-bottom: 20px;
     padding: min(3em, 15%);
@@ -184,7 +184,10 @@ main p {
     border-radius: 2rem;
 }
 
-.btn-color-1, 
+.btn-color-1 {
+    border: 0.1rem solid var(--accent-clr);
+}
+
 .btn-color-2 {
     border: 0.1rem solid var(--line-clr);
 }
@@ -219,9 +222,17 @@ main p {
    gap: 1rem;
 }
 
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
 .content-container {
     border: 1px solid var(--line-clr);
     border-radius: 1rem;
+    flex-grow: 1;
     margin-bottom: 20px;
     padding: min(3em, 15%);
 
@@ -235,26 +246,28 @@ main p {
     padding: min(3em, 15%);
 }
 
-.notes-container:hover {
-    background: var(--hover-clr);
-    border: 0.1rem solid var(--accent-clr);
-}
-
-.notes-container input {
-    background: transparent;
-    flex: 1;
-    border: 0;
-    outline: none;
+.notes-container h2 {
     color: var(--text-clr);
+    padding-bottom: 1.5rem;
 }
 
-.input-box-text {
-    font-size: 16px;
+.notes-container textarea {
+    background: none;
     width: 100%;
-    height: auto;
-    color: var(--text-clr);
+    height: 40px;
+    border: none;
+    resize: none;
     outline: none;
-    padding-top: 1.5rem;
+    color: var(--text-clr);
+    font-size: 18px;
+}
+
+textarea:is(:focus, :valid) {
+    padding: 20px;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0px;
 }
 
 @media(max-width: 800px) {
@@ -284,6 +297,7 @@ main p {
             grid-auto-columns: 60px;
             grid-auto-flow: column;
             align-items: center;
+            justify-content: center;
             overflow-x: scroll;
         }
 
@@ -293,7 +307,7 @@ main p {
         
         ul a, ul .dropdown-btn{
             width: 60px;
-            height: 60px;    
+            height: 60px;  
             padding: 0;
             border-radius: 0;
             justify-content: center;

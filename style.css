@@ -159,7 +159,7 @@ main p {
     background-color: var(--accent-clr);
     border: 1px solid var(--accent-clr);
     border-radius: 1rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: min(3em, 15%);
 
     h2, p { 
@@ -184,35 +184,35 @@ main p {
     border-radius: 2rem;
 }
 
-.btn-color-1 {
+.add-note-btn {
     border: 0.1rem solid var(--accent-clr);
 }
 
-.btn-color-2 {
+.ask-btn {
     border: 0.1rem solid var(--line-clr);
 }
 
-.btn-color-1:hover, 
-.btn-color-2:hover {
+.add-note-btn:hover, 
+.ask-btn:hover {
     cursor: pointer;
 }
 
-.btn-color-1 {
+.add-note-btn {
     background: var(--accent-clr);
     color: var(--text-clr);
 }
 
-.btn-color-1:hover {
+.add-note-btn:hover {
     background: var(--hover-clr);
     border: 0.1rem solid var(--accent-clr);
 }
 
-.btn-color-2 {
+.ask-btn {
     background: none;
     color: var(--secondary-text-clr);
 }
 
-.btn-color-2:hover {
+.ask-btn:hover {
     background: var(--hover-clr);
     border: 0.1rem solid var(--accent-clr);
     color: var(--text-clr);
@@ -262,7 +262,7 @@ main p {
     font-size: 18px;
 }
 
-textarea:is(:focus, :valid) {
+textarea:is(:focus) {
     padding: 20px;
 }
 

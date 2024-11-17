@@ -4,11 +4,3 @@ textarea.addEventListener("keyup", e =>{
     let scHeight = e.target.scrollHeight;
     textarea.style.height = `${scHeight}px`;
 });
-
-
-function addNote() {
-}
-
-function getQuetstion(){
-    
-}

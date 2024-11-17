@@ -52,16 +52,12 @@
     </nav>
     <main>
         <div class="btn-container">
-            <button class="btn btn-color-1" onclick="addNote()">Neuer Eintrag</button>
-            <button class="btn btn-color-2" onclick="getQuestion()">Stell mir eine Frage</button>
-        </div>
-        <div class="notes-container">
-            <h2>2. Eintrag - Datum</h2>
-            <textarea placeholder="Schreibe hier über deine Gedanken..." required></textarea>
-        </div>
+            <button class="btn add-note-btn" onclick="addNote()">Neuer Eintrag</button>
+            <button class="btn ask-btn" onclick="getQuestion()">Stell mir eine Frage</button>
+        </div>      
         <div class="notes-container">
             <h2>1. Eintrag - Datum</h2>
-            <textarea placeholder="Schreibe hier über deine Gedanken..." required></textarea>
+            <textarea class="note" placeholder="Schreibe hier über deine Gedanken..." required></textarea>
         </div>
     </main>
     <script type="text/javascript" src="script.js"></script>

@@ -1,10 +1,3 @@
-const textarea = document.querySelector("textarea");
-textarea.addEventListener("keyup", e =>{
-    textarea.style.height = "40px";
-    let scHeight = e.target.scrollHeight;
-    textarea.style.height = `${scHeight}px`;
-});
-
 const accordionHeaders = document.querySelectorAll(".notes-container-header");
 const accordionContents = document.querySelectorAll(".notes-container-content");
 
@@ -29,3 +22,25 @@ accordionHeaders.forEach((header) => {
         }
     });
 });
+
+const notesContainer = document.getElementById("accordion-item");
+const addNoteButton = document.querySelector(".btn add-note-btn");
+
+addNoteButton.addEventListener("click", () => addNote());
+
+function addNote() {
+
+}
+
+function getNotes() {
+    return JSON.parse(localStorage.getItem("diarynotes-notes") || "[]");
+}
+
+function saveNotes() {
+    localStorage.setItem("diarynotes-notes", JSON.stringify(notes));
+}
+
+function updateNote() {
+
+}
+

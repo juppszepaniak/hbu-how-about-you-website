@@ -184,20 +184,23 @@ main p {
     border-radius: 2rem;
 }
 
-.add-note-btn {
-    border: 0.1rem solid var(--accent-clr);
-}
-
-.ask-btn {
+.ask-btn, .decide-btn {
     border: 0.1rem solid var(--line-clr);
+    background: none;
+    color: var(--secondary-text-clr);
 }
 
 .add-note-btn:hover, 
-.ask-btn:hover {
+.ask-btn:hover,
+.decide-btn:hover {
+    background: var(--hover-clr);
+    border: 0.1rem solid var(--accent-clr);
+    color: var(--text-clr);
     cursor: pointer;
 }
 
 .add-note-btn {
+    border: 0.1rem solid var(--accent-clr);
     background: var(--accent-clr);
     color: var(--text-clr);
 }
@@ -205,17 +208,6 @@ main p {
 .add-note-btn:hover {
     background: var(--hover-clr);
     border: 0.1rem solid var(--accent-clr);
-}
-
-.ask-btn {
-    background: none;
-    color: var(--secondary-text-clr);
-}
-
-.ask-btn:hover {
-    background: var(--hover-clr);
-    border: 0.1rem solid var(--accent-clr);
-    color: var(--text-clr);
 }
 
 .btn-container {

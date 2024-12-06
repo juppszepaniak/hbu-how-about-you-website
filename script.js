@@ -23,24 +23,24 @@ accordionHeaders.forEach((header) => {
     });
 });
 
-const notesContainer = document.getElementById("accordion-item");
-const addNoteButton = document.querySelector(".btn add-note-btn");
+function addDiaryEntry() {
+    // Creating a div element
+    let entryDiv = document.createElement("Div");
+    entryDiv.className = "accordion-item";
 
-addNoteButton.addEventListener("click", () => addNote());
+    // Adding the notes-container-header 
+    const notesHeader = document.createElement("Div");
+    entryDiv.className = "notes-container-header";
 
-function addNote() {
+    //Adding Title
+    const title = document.createElement("H3");
+    const titleText = document.createTextNode(
+      "Neuer Eintrag"
+    );
+    title.appendChild(titleText);
+    notesHeader.appendChild(title);
 
-}
 
-function getNotes() {
-    return JSON.parse(localStorage.getItem("diarynotes-notes") || "[]");
-}
-
-function saveNotes() {
-    localStorage.setItem("diarynotes-notes", JSON.stringify(notes));
-}
-
-function updateNote() {
-
-}
-
+    // Appending the div element to ""
+    document.getElementsByClassName("accordion")[0].appendChild(entryDiv);
+  }

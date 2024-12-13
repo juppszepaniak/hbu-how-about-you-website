@@ -23,12 +23,22 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     background-color: var(--base-clr);
-    color: var(--text-clr);
+    color: var(--text-clr); 
     display: grid;
     grid-template-columns: auto 1fr; 
 }
 
+main {
+    padding: 2rem;
+}
+
+/* SIDEBAR */
+
 #sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     box-sizing: border-box;
     height: 100vh;
     width: 250px;
@@ -124,6 +134,10 @@ body {
     rotate: 180deg;
 }
 
+.dropdown-btn.rotate svg:last-child {
+    rotate: 90deg;
+}
+
 #sidebar .sub-menu {
     padding-left: 2rem;
 }
@@ -145,15 +159,7 @@ body {
     background-color: var(--hover-clr);
 }
 
-main {
-    padding: min(30px, 7%);
-}
-
-main p {
-    color: var(--secondary-text-clr);
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
+/* CONTENT CONTAINERS */
 
 .description-container {
     background-color: var(--accent-clr);
@@ -162,63 +168,16 @@ main p {
     margin-bottom: 40px;
     padding: min(3em, 15%);
 
-    h2, p { 
+    p { 
         margin-top: 1em; 
         color: var(--base-clr);
     }
 }
 
-.btn-container {
-    display: flex;
-    gap: 1rem;
-    justify-content: left;
-    margin-bottom: 50px;
-}
-
-.btn {
-    font-size:medium;
-    font-weight: 600;
-    transition: all 300ms ease;
-    padding: 1rem;
-    width: auto;
-    border-radius: 2rem;
-}
-
-.ask-btn, .decide-btn {
-    border: 0.1rem solid var(--line-clr);
-    background: none;
-    color: var(--secondary-text-clr);
-}
-
-.add-note-btn:hover, 
-.ask-btn:hover,
-.decide-btn:hover {
-    background: var(--hover-clr);
-    border: 0.1rem solid var(--accent-clr);
-    color: var(--text-clr);
-    cursor: pointer;
-}
-
-.add-note-btn {
-    border: 0.1rem solid var(--accent-clr);
-    background: var(--accent-clr);
-    color: var(--text-clr);
-}
-
-.add-note-btn:hover {
-    background: var(--hover-clr);
-    border: 0.1rem solid var(--accent-clr);
-}
-
-.btn-container {
-   gap: 1rem;
-}
-
-.section-container {
+.content-section-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    width: 100%;
 }
 
 .content-container {
@@ -228,64 +187,112 @@ main p {
     margin-bottom: 20px;
     padding: min(3em, 15%);
 
-    h2, p { margin-top: 1em }
+    p { 
+        margin-top: 1em; 
+        color: var(--secondary-text-clr);
+    }
 }
 
-.accordion-item {
-    margin-bottom: 20px;
-}
+/* BUTTONS */
 
-.notes-container-header {
-    height: 21px;
-    background-color: var(--hover-clr);
-    border: 1px solid var(--accent-clr);
-    border-top-right-radius: 2rem;
-    padding: min(1em, 15%);
-}
-
-.notes-container-header:hover {
-    background-color: var(--accent-clr);
-}
-
-.notes-container-header.active {
-    background-color: var(--accent-clr);
-}
-
-.notes-container-header h3 {
-    padding-left: 1rem;
-    font-size: larger;
+.btn {
+    font-size:medium;
     font-weight: 600;
+    transition: all 300ms ease;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: auto;
+    border-radius: 2rem;
+}
+
+.add-btn-container {
+    margin-top: auto;
+    padding: 1rem; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.add-note-btn, .question-btn {
+    border: 0.1rem solid var(--accent-clr);
+    background: var(--accent-clr);
     color: var(--text-clr);
-    cursor: default;
+}
+
+.decision-btn {
+    border: 0.1rem solid var(--line-clr);
+    background: none;
+    color: var(--secondary-text-clr);
+}
+
+.add-note-btn:hover, 
+.question-btn:hover,
+.decision-btn:hover {
+    background: var(--hover-clr);
+    border: 0.1rem solid var(--accent-clr);
+    color: var(--text-clr);
+    cursor: pointer;
+}
+
+#sidebar.close .add-note-btn {
+    background-color: var(--accent-clr);
+    font-size: 23px;
+    padding: 0.5rem;
+}
+
+#sidebar.close .add-note-btn:hover {
+    background: var(--hover-clr);
+    border: 0.1rem solid var(--accent-clr);
+    color: var(--text-clr);
+    cursor: pointer;
+}
+
+#sidebar.close .add-note-btn .button-text {
+    display: none;
+}
+
+#sidebar.close .add-note-btn .button-icon {
+    display: block;
+}
+
+#sidebar:not(.close) .add-note-btn .button-text {
+    display: block;
+}
+
+#sidebar:not(.close) .add-note-btn .button-icon {
+    display: none;
+}
+
+/* DIARY ENTRIES */
+
+.diary-entry-header-container {
+    display: block;
+    height: auto;
+    gap: 1rem;
+    justify-content: left;
+    margin-bottom: 30px;
+}
+
+.diary-entry-container {
+    text-align: start;
+    padding-left: 5rem,
+}
+
+.diary-entry-title {
+    padding-left: 2rem;
+    padding-top: 0.5rem;
 }
 
 .notes-container-content {
-    display: none;
-    max-height: 0px;
-    border: 1px solid var(--accent-clr);
-    border-top: none;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    padding-top: min(3em, 15%);
-    padding-left: min(1em, 15%);
-    padding-right: min(1em, 15%);
-    padding-bottom: min(1em, 15%);
-}
-
-.notes-container-content.active {
-    display: block;
-    max-height: 1000px;
-}
-
-.notes-container-content h2 span {
-    font-weight: 600;
+    padding: 2rem;
 }
 
 .notes-container-content textarea {
+    width: 100%;
+    height: 70vh;
     background: none;
-    max-height: fit-content;
     border: none;
     resize: none;
     outline: none;
@@ -297,6 +304,8 @@ textarea::-webkit-scrollbar {
     width: 0px;
 }
 
+/* MEDIA QUERIES */
+
 @media(max-width: 800px) {
     body {
         grid-template-columns: 1fr;
@@ -306,7 +315,7 @@ textarea::-webkit-scrollbar {
     }
     .container {
         border: none;
-        padding: 0
+        padding: 0;
     }
     #sidebar {
         height: 60px;
@@ -318,23 +327,26 @@ textarea::-webkit-scrollbar {
         top: unset;
         bottom: 0;
 
+        display: flex; 
+        flex-direction: row; 
+        align-items: center; 
+
         > ul {
+            flex-grow: 1;
+            display: flex; 
+            align-items: center; 
+            justify-content: start; 
             padding: 0;
-            display: grid;
-            grid-auto-columns: 60px;
-            grid-auto-flow: column;
-            align-items: center;
-            justify-content: center;
-            overflow-x: scroll;
+            overflow-x: auto;
         }
 
         ul li {
             height: 100%;
         }
-        
-        ul a, ul .dropdown-btn{
+
+        ul a, ul .dropdown-btn {
             width: 60px;
-            height: 60px;  
+            height: 60px;
             padding: 0;
             border-radius: 0;
             justify-content: center;
@@ -342,6 +354,16 @@ textarea::-webkit-scrollbar {
 
         ul li span, ul li:first-child, .dropdown-btn svg:last-child {
             display: none;
+        }
+
+        .add-btn-container {
+            flex-shrink: 0; 
+            height: 60px;
+            margin-left: auto; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            box-sizing: border-box;
         }
 
         ul li .sub-menu.show {
@@ -373,4 +395,5 @@ textarea::-webkit-scrollbar {
         }
     }
 }
+
 

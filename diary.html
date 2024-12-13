@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HBU - How About You?</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>How About You?</title>
+    <link rel="stylesheet" href="styles.css" />
     <script type="text/javascript" src="app.js" defer></script>
   </head>
   <body>
@@ -43,23 +43,7 @@
           </a>
         </li>
         <li>
-          <a href="dashboard.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="undefined"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h240v-560H200v560Zm320 0h240v-280H520v280Zm0-360h240v-200H520v200Z"
-              />
-            </svg>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li class="active">
-          <a href="diary.html">
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -72,10 +56,6 @@
               />
             </svg>
             <span>Tagebuch</span>
-          </a>
-        </li>
-        <li>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -83,73 +63,44 @@
               width="24px"
               fill="#FFFFFF"
             >
-              <path
-                d="M480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-200v-80h320v80H320Zm10-120q-69-41-109.5-110T180-580q0-125 87.5-212.5T480-880q125 0 212.5 87.5T780-580q0 81-40.5 150T630-320H330Zm24-80h252q45-32 69.5-79T700-580q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 54 24.5 101t69.5 79Zm126 0Z"
-              />
-            </svg>
-            <span>Inspiration</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#FFFFFF"
-            >
-              <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+              <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
             </svg>
           </button>
           <ul class="sub-menu">
             <div>
-              <li><a href="#">Tipps für Dich</a></li>
-              <li><a href="#">Zitate finden</a></li>
-              <li><a href="#">Schon gekocht?</a></li>
+              <li class="active"><a href="diary.html">25.11.2024</a></li>
+              <li><a href="diary.html">24.11.2024</a></li>
+              <li><a href="diary.html">23.11.2024</a></li>
             </div>
           </ul>
         </li>
       </ul>
+      <div class="add-btn-container">
+        <button class="btn add-note-btn" onclick="addDiaryEntry()">
+          <span class="button-text">Neuer Eintrag</span>
+          <span class="button-icon">+</span>
+        </button>
+      </div>
     </nav>
     <main>
-      <div class="btn-container">
-        <button class="btn add-note-btn" onclick="addDiaryEntry()">Neuer Eintrag</button>
-        <button class="btn ask-btn">Stell mir eine Frage</button>
-        <button class="btn decide-btn">Kopf / Zahl</button>
+      <div class="diary-entry-header-container">
+        <button class="btn question-btn" onclick="askRandomQuestion()">
+          Stell mir eine Frage
+        </button>
+        <button class="btn decision-btn" onclick="getDecision()">
+          Kopf / Zahl
+        </button>
       </div>
-      <div class="accordion">
-        <div class="accordion-item">
-          <div class="notes-container-header">
-            <h3>25.11.2024</h3>
-          </div>
-          <div class="notes-container-content">
-            <textarea
-              class="note"
-              placeholder="Schreibe hier über deine Gedanken..."
-              required
-            ></textarea>
-          </div>
+      <div class="diary-entry-container">
+        <div class="diary-entry-title">
+          <h2>25.11.2024</h2>
         </div>
-        <div class="accordion-item">
-          <div class="notes-container-header">
-            <h3>24.11.2024</h3>
-          </div>
-          <div class="notes-container-content">
-            <textarea
-              class="note"
-              placeholder="Schreibe hier über deine Gedanken..."
-              required
-            ></textarea>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="notes-container-header">
-            <h3>23.11.2024</h3>
-          </div>
-          <div class="notes-container-content">
-            <textarea
-              class="note"
-              placeholder="Schreibe hier über deine Gedanken..."
-              required
-            ></textarea>
-          </div>
+        <div class="notes-container-content">
+          <textarea
+            class="note"
+            placeholder="Schreibe hier über deine Gedanken..."
+            required
+          ></textarea>
         </div>
       </div>
     </main>

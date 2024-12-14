@@ -1,0 +1,60 @@
+@media screen and (max-width: 1400px) {
+    #home {
+        height: 83vh;
+        margin-bottom: 6rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #desktop-nav {
+        display: none;
+    }
+    #hamburger-nav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #hamburger-nav {
+        margin-top: 2.5rem;
+    }
+    #diary {
+        height: 83vh;
+        margin-bottom: 6rem; 
+    }
+    footer, nav {
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    footer a {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+    .diary-entry-btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .diary-entry-container {
+        text-align: center;
+        padding-left: 0,
+    }
+    .diary-entry-title {
+        padding-left: 0.5rem;
+        padding-top: 1rem;
+    }
+    .notes-container-content {
+        padding-top: 2rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+

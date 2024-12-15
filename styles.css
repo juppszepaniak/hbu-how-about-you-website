@@ -220,29 +220,40 @@ a:hover {
     border-radius: 2rem;
 }
 
-.add-btn-container {
-    margin-top: auto;
-    padding: 1rem; 
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+.container-btn {
+    font-size:medium;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: auto;
+    border-radius: 2rem;
 }
 
-.add-note-btn {
+.btn-container {
+    display: block;
+    height: auto;
+    gap: 1rem;
+    justify-content: start;
+    margin-bottom: 30px;
+}
+
+.primary-btn {
     border: 0.1rem solid var(--accent-clr);
     background: var(--accent-clr);
     color: var(--text-clr);
 }
 
-.decision-btn, .question-btn {
+.secondary-btn {
     border: 0.1rem solid var(--line-clr);
     background: none;
     color: var(--secondary-text-clr);
 }
 
-.add-note-btn:hover, 
-.question-btn:hover,
-.decision-btn:hover {
+.primary-btn:hover, 
+.secondary-btn:hover {
     background: var(--hover-clr);
     border: 0.1rem solid var(--accent-clr);
     color: var(--text-clr);
@@ -259,12 +270,24 @@ a:hover {
     display: grid;
 }
 
+.container-btn {
+    font-size:medium;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: auto;
+    border-radius: 2rem;
+}
+
 .diary-entry-btn-container {
-    display: block;
+    display: flex;
     height: auto;
     gap: 1rem;
-    justify-content: left;
-    margin-bottom: 30px;
+    justify-content: end;
+    align-items: end;
 }
 
 .diary-entry-container {
@@ -278,12 +301,12 @@ a:hover {
 
 .diary-entry-content {
     padding-top: 2rem;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
 }
 
 .diary-entry-content textarea {
     width: 100%;
-    height: fit-content;
+    height: auto;
     background: none;
     border: none;
     resize: none;
@@ -292,6 +315,11 @@ a:hover {
     font-size: 18px;
     resize: Shorizontal;
     overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.content-container:hover {
+    border: 1px solid var(--accent-clr);
 }
 
 textarea::-webkit-scrollbar {

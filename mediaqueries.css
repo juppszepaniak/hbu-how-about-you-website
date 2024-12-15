@@ -25,6 +25,8 @@
     footer, nav {
         height: fit-content;
         margin-bottom: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 
     footer a {
@@ -34,9 +36,16 @@
     footer p {
         font-size: 0.75rem;
     }
-
+    .content-container {
+        padding: 1rem;
+    }
     .logo {
         font-size: 1.5rem;
+    }
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .diary-entry-btn-container {
         display: flex;

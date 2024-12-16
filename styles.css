@@ -76,6 +76,11 @@ a:hover {
     text-decoration-color: var(--accent-clr);
 }
 
+p.centered-para {
+    padding-top: 1rem;
+    text-align: center;       
+}
+
 .logo {
     font-size: 2rem;
     font-weight: 600;
@@ -94,6 +99,7 @@ a:hover {
 .hamburger-menu {
     position: relative;
     display: inline-block;
+    z-index:100;
 }
 
 .hamburger-icon {
@@ -206,6 +212,23 @@ a:hover {
     }
 }
 
+.inside-description-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--base-clr);
+    border: 1px solid var(--line-clr);
+    border-radius: 5rem;
+    flex-grow: 1;
+    margin-top: 2rem;
+    padding: min(3em, 15%);
+
+    p { 
+        margin-top: 1em; 
+        color: var(--secondary-text-clr);
+    }
+}
+
 /* BUTTONS */
 
 .btn {
@@ -248,8 +271,14 @@ a:hover {
 
 .secondary-btn {
     border: 0.1rem solid var(--line-clr);
-    background: none;
+    background: var(--base-clr);
     color: var(--secondary-text-clr);
+}
+
+.inside-description-container-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
 .primary-btn:hover, 
@@ -304,7 +333,7 @@ a:hover {
     padding-left: 0.5rem;
 }
 
-.diary-entry-content textarea {
+textarea {
     width: 100%;
     height: auto;
     background: none;
@@ -313,7 +342,6 @@ a:hover {
     outline: none;
     color: var(--secondary-text-clr);
     font-size: 18px;
-    resize: Shorizontal;
     overflow: hidden;
     margin-bottom: 2rem;
 }

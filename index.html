@@ -9,16 +9,16 @@
   </head>
   <body>
     <nav id="desktop-nav">
-      <div class="logo">How About You?</div>
+      <div class="logo">HowAboutYou</div>
       <div>
         <ul class="nav-links">
           <li><a href="#dashboard">Dashboard</a></li>
-          <li><a href="#diary">Tagebuch</a></li>
+          <li><a href="diary.html">Tagebuch</a></li>
         </ul>
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo">How About You?</div>
+      <div class="logo">HowAboutYou</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -27,29 +27,42 @@
         </div>
         <div class="menu-links">
           <li><a href="#dashboard" onclick="toggleMenu()">Dashboard</a></li>
-          <li><a href="#diary" onclick="toggleMenu()">Tagebuch</a></li>
+          <li><a href="diary.html" onclick="toggleMenu()">Tagebuch</a></li>
         </div>
       </div>
     </nav>
     <main>
       <section id="home">
         <div class="description-container">
-          <h3>Home • How About You?</h3>
+          <h3>HBU - How About You?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            beatae eum id quibusdam ducimus in qui saepe sequi quasi error.
-            Labore nihil, fugit, voluptatum, facere nobis qui nostrum nisi
-            quibusdam impedit accusamus odit tenetur nulla perferendis facilis
-            rerum. 
-          </p>          
+            Hier hast findest du die Möglichkeit dir selbst näherzukommen.
+            Reflektiere deinen Tag, halte deine Gedanken fest und schätze ein,
+            wie du dich fühlst. So kannst du nicht nur deinen Alltag bewusster
+            wahrnehmen, sondern auch ein tieferes Verständnis für deine
+            emotionale Gesundheit entwickeln - also nimm dir Zeit für dich!
+          </p>
+          <p class="centered-para">
+           <b>Wie fühlst du dich gerade?</b>
+          </p>
+          <p></p>
+          <div class="inside-description-container">
+            <div id="self-assessment-slider">
+              <input type="range" id="self-assessment" min="0" max="8"/>
+              <p>Ich fühle mich: <output id="value"></output></p>
+            </div>
+          </div>
+          <div class="inside-description-container-btn">
+            <button class="container-btn secondary-btn" onclick="saveSelfAssessment()">
+              Bestätigen
+            </button>
+          </div>
         </div>
       </section>
       <section id="dashboard">
         <div class="description-container">
           <h3>Dashboard</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
         <div class="content-section-container">
           <div class="content-container">
@@ -62,22 +75,6 @@
           </div>
         </div>
       </section>
-      <section id="diary">
-        <div class="btn-container">
-          <button class="btn primary-btn" onclick="addDiaryEntry()">
-            Neuer Eintrag
-          </button>
-          <button class="btn secondary-btn" onclick="askRandomQuestion()">
-            Stell mir eine Frage
-          </button>
-          <button class="btn secondary-btn" onclick="getDecision()">
-            Kopf / Zahl
-          </button>
-        </div>
-        <div id="diary-section-id" class="diary-section-container">
-        
-        </div>
-      </section>
     </main>
     <footer>
       <nav>
@@ -85,7 +82,7 @@
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#diary">Tagebuch</a></li>
+            <li><a href="diary.html">Tagebuch</a></li>
           </ul>
         </div>
       </nav>

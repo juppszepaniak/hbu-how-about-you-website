@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HBU - Tagebuch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">HowAboutYou</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html#dashboard">Dashboard</a></li>
+          <li><a href="#diary">Tagebuch</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">HowAboutYou</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+          <li><a href="index.html#dashboard" onclick="toggleMenu()">Dashboard</a></li>
+          <li><a href="#diary" onclick="toggleMenu()">Tagebuch</a></li>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section id="diary">
+        <div class="btn-container">
+          <button class="btn primary-btn" onclick="addDiaryEntry()">
+            Neuer Eintrag
+          </button>
+          <button class="btn secondary-btn" onclick="askRandomQuestion()">
+            Stell mir eine Frage
+          </button>
+          <button class="btn secondary-btn" onclick="getDecision()">
+            Kopf / Zahl
+          </button>
+        </div>
+        <div id="diary-section-id" class="diary-section-container"></div>
+      </section>
+    </main>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#dashboard">Dashboard</a></li>
+            <li><a href="#diary">Tagebuch</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Jupp Szepaniak. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="diary-page-component.js"></script>
+  </body>
+</html>

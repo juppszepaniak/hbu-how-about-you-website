@@ -42,18 +42,17 @@
             wahrnehmen, sondern auch ein tieferes Verständnis für deine
             emotionale Gesundheit entwickeln - also nimm dir Zeit für dich!
           </p>
-          <p class="centered-para">
-           <b>Wie fühlst du dich gerade?</b>
+          <p>
+           Ich fühle mich heute: <br><b><output id="slider-value"></output></p></b>
           </p>
           <p></p>
           <div class="inside-description-container">
-            <div id="self-assessment-slider">
-              <input type="range" id="self-assessment" min="0" max="8"/>
-              <p>Ich fühle mich: <output id="value"></output></p>
+            <div id="slider-container">
+              <input type="range" id="self-assessment-slider" min="0" max="8"/>
             </div>
           </div>
           <div class="inside-description-container-btn">
-            <button class="container-btn secondary-btn" onclick="saveSelfAssessment()">
+            <button class="container-btn secondary-btn" onclick="safeSelfAssessment()">
               Bestätigen
             </button>
           </div>

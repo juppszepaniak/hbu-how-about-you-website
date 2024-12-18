@@ -1,9 +1,5 @@
 /* DIARY */
 
-const removeSpecialChars = (val) => {
-  return val.trim().replace(/[^A-Za-z0-9\-\s]/g, "");
-};
-
 function addDiaryEntry() {
   const diaryEntryContainer = document.getElementById("diary-section-id");
   const curDate = new Date().toLocaleDateString("de-DE");

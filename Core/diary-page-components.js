@@ -29,9 +29,19 @@ function addDiaryEntry() {
       `;
 
     diaryEntryContainer.insertAdjacentHTML("afterbegin", newDiaryEntryHTML);
+
+    const newTextarea = document.getElementById(`textarea-${newDiaryEntryId}`);
+
+    adjustTextareaHeight(newTextarea);
+    newTextarea.addEventListener("input", () =>
+      adjustTextareaHeight(newTextarea)
+    );
+    
   } else {
     alert(`Du hast bereits einen Eintrag für heute, den ${curDate} erstellt`);
   }
+
+  textarea.addEventListener("input", () => adjustTextareaHeight(textarea));
 }
 
 function saveDiaryEntry(entryId) {

@@ -36,7 +36,6 @@ function addDiaryEntry() {
     newTextarea.addEventListener("input", () =>
       adjustTextareaHeight(newTextarea)
     );
-    
   } else {
     alert(`Du hast bereits einen Eintrag für heute, den ${curDate} erstellt`);
   }
@@ -66,6 +65,17 @@ function deleteDiaryEntry(entryId) {
 
   localStorage.removeItem(`diary-${entryId}`);
   alert("Eintrag erfolgreich gelöscht!");
+}
+
+function sortDiaryEntries() {
+  let localStorageArray = new Array();
+
+  for (let i = 0; i < localStorage.length; i++) {
+    localStorageArray[i] =
+      localStorage.key(i) + localStorage.getItem(localStorage.key(i));
+  }
+  let sortedArray = localStorageArray.sort();
+  console.log(`Test 1: ${sortedArray}`);
 }
 
 function updateDiaryEntries() {
@@ -103,6 +113,7 @@ function updateDiaryEntries() {
           "afterbegin",
           savedDiaryEntryHTML
         );
+        console.log(`Test 2: ${entryId}`);
       }
     }
   }
@@ -131,7 +142,7 @@ document.addEventListener("input", (event) => {
   }
 });
 
-/* ASK QUESTION AI */
+/* ASK QUESTION >> later OpenAI API */
 
 function askRandomQuestion() {
   const questions = [

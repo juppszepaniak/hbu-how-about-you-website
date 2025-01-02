@@ -67,59 +67,81 @@ function deleteDiaryEntry(entryId) {
   alert("Eintrag erfolgreich gelöscht!");
 }
 
-function sortDiaryEntries() {
-  let localStorageArray = new Array();
-
+function getDiaryEntries() {
+  let diaryEntries = [];
   for (let i = 0; i < localStorage.length; i++) {
-    localStorageArray[i] =
-      localStorage.key(i) + localStorage.getItem(localStorage.key(i));
+    const key = localStorage.key(i);
+    if (key.startsWith("diary-")) {
+      const entry = JSON.parse(localStorage.getItem(key));
+      diaryEntries.push(entry);
+    }
   }
-  let sortedArray = localStorageArray.sort();
-  console.log(`Test 1: ${sortedArray}`);
+  return diaryEntries;
+}
+
+function sortDiaryEntriesByDate(entries) {
+  return entries
+    .sort((a, b) => {
+      const dateA = new Date(a.date.split(".").reverse().join("-"));
+      const dateB = new Date(b.date.split(".").reverse().join("-"));
+
+      console.log(dateA, dateB);
+
+      return dateA - dateB;
+    })
+    .reverse();
 }
 
 function updateDiaryEntries() {
   const diaryEntryContainer = document.getElementById("diary-section-id");
+  diaryEntryContainer.innerHTML = "";
 
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
+  const diaryEntries = getDiaryEntries();
+  const sortedEntries = sortDiaryEntriesByDate(diaryEntries);
 
-    if (key.startsWith("diary-")) {
-      const diaryEntry = JSON.parse(localStorage.getItem(key));
-      const entryId = removeSpecialChars(diaryEntry.date);
-
-      if (!document.getElementById(entryId)) {
-        const savedDiaryEntryHTML = `
-            <div id="${entryId}" class="content-container">
-              <div class="diary-entry-container">
-                <div class="diary-entry-title">
-                  <h2>${diaryEntry.date}</h2>
-                </div>
-                <div class="diary-entry-content">
-                  <textarea id="textarea-${entryId}" class="note" required>${diaryEntry.content}</textarea>
-                </div>
-              </div>
-              <div class="diary-entry-btn-container">
-                <button class="container-btn primary-btn" onclick="saveDiaryEntry('${entryId}')">
-                  Eintrag speichern
-                </button>
-                <button class="container-btn secondary-btn" onclick="deleteDiaryEntry('${entryId}')">
-                  Eintrag löschen
-                </button>
-              </div>
-            </div>
-          `;
-        diaryEntryContainer.insertAdjacentHTML(
-          "afterbegin",
-          savedDiaryEntryHTML
-        );
-        console.log(`Test 2: ${entryId}`);
-      }
-    }
-  }
+  sortedEntries.forEach((entry) => {
+    const entryId = removeSpecialChars(entry.date);
+    const savedDiaryEntryHTML = `
+      <div id="${entryId}" class="content-container">
+        <div class="diary-entry-container">
+          <div class="diary-entry-title">
+            <h2>${entry.date}</h2>
+          </div>
+          <div class="diary-entry-content">
+            <textarea id="textarea-${entryId}" class="note" required>${entry.content}</textarea>
+          </div>
+        </div>
+        <div class="diary-entry-btn-container">
+          <button class="container-btn primary-btn" onclick="saveDiaryEntry('${entryId}')">
+            Eintrag speichern
+          </button>
+          <button class="container-btn secondary-btn" onclick="deleteDiaryEntry('${entryId}')">
+            Eintrag löschen
+          </button>
+        </div>
+      </div>
+    `;
+    diaryEntryContainer.insertAdjacentHTML("beforeend", savedDiaryEntryHTML);
+  });
 }
 
 window.addEventListener("DOMContentLoaded", updateDiaryEntries);
+
+/* Todo-Liste */
+
+function safeTodoList() {
+
+}
+
+function deleteTodoList() {
+
+}
+
+function displayTodoList() {
+
+}
+
+/* window.addEventListener("DOMContentLoaded", updateDiaryEntries); */
 
 /* TEXTEREA */
 
@@ -141,6 +163,10 @@ document.addEventListener("input", (event) => {
     autoResizeTextarea(event.target);
   }
 });
+
+/* To-Do List */
+
+function openToDoList() {}
 
 /* ASK QUESTION >> later OpenAI API */
 

@@ -312,7 +312,8 @@ p.centered-para {
 }
 
 .primary-btn:hover, 
-.secondary-btn:hover {
+.secondary-btn:hover,
+.todo-btn:hover {
     background: var(--hover-clr);
     border: 0.1rem solid var(--accent-clr);
     color: var(--text-clr);

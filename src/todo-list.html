@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HBU - Tagebuch</title>
+    <title>HBU - Todos</title>
     <link rel="stylesheet" href="/src/styles/styles.css" />
     <link rel="stylesheet" href="/src/styles/mediaqueries.css" />
     <link
@@ -19,7 +19,7 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#dashboard">Dashboard</a></li>
-          <li><a href="#diary">Tagebuch</a></li>
+          <li><a href="diary.html">Tagebuch</a></li>
           <li><a href="todo-list.html">Todos</a></li>
         </ul>
       </div>
@@ -37,7 +37,7 @@
           <li>
             <a href="index.html#dashboard" onclick="toggleMenu()">Dashboard</a>
           </li>
-          <li><a href="#diary" onclick="toggleMenu()">Tagebuch</a></li>
+          <li><a href="diary.html" onclick="toggleMenu()">Tagebuch</a></li>
           <li>
             <a href="todo-list.html" onclick="toggleMenu()">Todos</a>
           </li>
@@ -45,19 +45,28 @@
       </div>
     </nav>
     <main>
-      <section id="diary">
-        <div class="btn-container">
-          <button class="btn primary-btn" onclick="addDiaryEntry()">
-            Neuer Eintrag
-          </button>
-          <button class="btn secondary-btn" onclick="askRandomQuestion()">
-            Stell mir eine Frage
-          </button>
-          <button class="btn secondary-btn" onclick="getDecision()">
-            Kopf / Zahl
-          </button>
+      <section id="todos">
+        <div class="description-container">
+          <h3>HBU - Todo-Liste</h3>
+          <p>
+            Hier hast findest du die Möglichkeit deine Aufgaben zu notieren!
+          </p>
+          <div class="inside-description-container-todos">
+            <textarea
+              id="ai-textarea"
+              class="note"
+              placeholder="Notiere deine Todos oder kommuniziere mit der KI."
+            ></textarea>
+          </div>
+          <div class="inside-description-container-btn">
+            <button
+              class="container-btn secondary-btn"
+              onclick="safeTodoList()"
+            >
+              Speichern
+            </button>
+          </div>
         </div>
-        <div id="diary-section-id" class="diary-section-container"></div>
       </section>
     </main>
     <footer>
@@ -66,7 +75,7 @@
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#dashboard">Dashboard</a></li>
-            <li><a href="#diary">Tagebuch</a></li>
+            <li><a href="diary.html">Tagebuch</a></li>
             <li><a href="todo-list.html">Todos</a></li>
           </ul>
         </div>
@@ -74,6 +83,5 @@
       <p>Copyright &#169; 2024 Jupp Szepaniak. All Rights Reserved.</p>
     </footer>
     <script src="app.js"></script>
-    <script src="diary-entries.js"></script>
   </body>
 </html>

@@ -14,7 +14,7 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     #hamburger-nav {
         margin-top: 2.5rem;
     }
@@ -28,11 +28,9 @@
         margin-left: 2rem;
         margin-right: 2rem;
     }
-
     footer a {
         font-size: 1rem;
     }
-
     footer p {
         font-size: 0.75rem;
     }

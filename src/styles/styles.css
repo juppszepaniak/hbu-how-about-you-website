@@ -229,6 +229,23 @@ p.centered-para {
     }
 }
 
+.inside-description-container-todos {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--base-clr);
+    border: 1px solid var(--line-clr);
+    border-radius: 2rem;
+    flex-grow: 1;
+    margin-top: 2rem;
+    padding: min(3em, 15%);
+
+    p { 
+        margin-top: 1em; 
+        color: var(--secondary-text-clr);
+    }
+}
+
 #slider-container {
     display: flex;
     align-items: start;

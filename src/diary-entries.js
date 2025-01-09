@@ -164,11 +164,7 @@ document.addEventListener("input", (event) => {
   }
 });
 
-/* To-Do List */
-
-function openToDoList() {}
-
-/* ASK QUESTION >> later OpenAI API */
+/* ASK QUESTION */
 
 function askRandomQuestion() {
   const questions = [
